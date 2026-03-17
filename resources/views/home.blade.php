@@ -11,7 +11,7 @@
             <h1>{{ $banners->name }}</h1>
             <p>{{ $banners->description }}</p>
             <a href="">
-                    Продукция
+                Продукция
             </a>
         </div>
     </section>
