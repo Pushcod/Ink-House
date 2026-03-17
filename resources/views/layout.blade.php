@@ -8,6 +8,10 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <header></header>
+    <main>
+        @yield('main_content')
+    </main>
+    <footer></footer>
 </body>
 </html>
