@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer('price');
             $table->string('author_id');
             $table->string('country_id');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

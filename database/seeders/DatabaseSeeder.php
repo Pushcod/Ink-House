@@ -20,6 +20,9 @@ class DatabaseSeeder extends Seeder
             AuthorSeeder::class,
             CountrySeeder::class,
             ManagerSeeder::class,
+            BannerSeeder::class,
+            CollectionSeeder::class,
+            TeamSeeder::class,
         ]);
 
     }
