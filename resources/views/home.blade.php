@@ -16,4 +16,35 @@
         @endforeach
         
     </section>
+    <section></section>
+    <section>
+        @foreach ($collections as $collection)
+        <div class="">
+            <img src="" alt="">
+        </div>
+        <div class="">
+            <h1 class="text-red-500">{{ $collection->name }}</h1>
+            <p>{{ $collection->description }}</p>
+            <a href="">
+                Продукция
+            </a>
+        </div>
+        @endforeach
+        
+    </section>
+    <section>
+        @foreach ($teams as $team)
+        <div class="">
+            <img src="" alt="">
+        </div>
+        <div class="">
+            <h1 class="text-red-500">{{ $team->name }}</h1>
+            <p>{{ $team->description }}</p>
+            <a href="">
+                Продукция
+            </a>
+        </div>
+        @endforeach
+        
+    </section>
 @endsection

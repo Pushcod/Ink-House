@@ -11,6 +11,8 @@ class MainController extends Controller
 {
     public function index(){
         $banners = Banner::latest()->get();
-        return view('home',compact('banners'));
+        $collections = Collection::latest()->get();
+        $teams = Team::latest()->get();
+        return view('home',compact(['banners', 'teams', 'collections']));
     }
 }
