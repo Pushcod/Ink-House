@@ -16,17 +16,17 @@ class ManagerSeeder extends Seeder
             [
                 'name' => 'Ethan',
                 'second_name' => 'Winters',
-                'image' => null,
+                'image' => 'image/ethan.jpg',
             ],
             [
                 'name' => 'Freya',
                 'second_name' => 'Ritars',
-                'image' => null,
+                'image' => 'image/freya.jpg',
             ],
             [
                 'name' => 'Michael',
                 'second_name' => 'Jackson',
-                'image' => null,
+                'image' => 'image/michael.jpg',
             ],
         ];
     }

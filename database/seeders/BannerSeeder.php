@@ -15,7 +15,7 @@ class BannerSeeder extends Seeder
     {
         Banner::create([
             
-                'name' => 'Реплики картин от Ink. House',
+                'name' => 'Реплики картин от',
                 'description' => 'Высокое качество отрисовки на плотной бумаге или льняном холсте. Редкие произведения, доступные цены.',
                 'image' => 'image/banner.jpg',
         

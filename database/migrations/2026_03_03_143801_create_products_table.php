@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('name');
             $table->text('description');
             $table->integer('price');
-            $table->string('author_id');
-            $table->string('country_id');
+            $table->string('author_id')->nullable();
+            $table->string('country_id')->nullable();
             $table->string('image')->nullable();
             $table->timestamps();
         });
