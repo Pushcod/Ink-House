@@ -35,7 +35,7 @@
     <section>
         @foreach ($teams as $team)
         <div class="flex items-center justify-between">
-            <img src="{{ asset('storage/' . $team->image) }}" alt="">
+            <img src="{{ asset('storage/', $team->image) }}" alt="">
         
         <div class="">
             <h1 class="font-medium text-[40px]">{{ $team->name }}</h1>

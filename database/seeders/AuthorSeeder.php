@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Author;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -26,5 +27,9 @@ class AuthorSeeder extends Seeder
                 'date_birth' => '12.03.1750',
             ],
         ];
+
+        foreach ($authors as $author){
+            Author::create($author);
+        }
     }
 }

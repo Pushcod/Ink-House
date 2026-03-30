@@ -4,7 +4,7 @@
     <div class="">
         <h2>Все посты</h2>
         <div class="">
-            @forelse ($products as $product)
+           
                 <h2 class="">{{ $product->name }}</h2>
                 <p>{{ $product->description }}</p>
                 <p>{{ number_format($product->price, 2) }} ₽</p>
@@ -16,9 +16,7 @@
                     @method('DELETE')
                     <button type="submit" class="" onclick="return confrim('Вы уверены?')">Удалить</button>
                 </form>
-            @empty
-                <a href="{{ route('products.create') }}">Создать новый пост</a>
-            @endforelse
+            
         </div>
     </div>
 @endsection
