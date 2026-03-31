@@ -58,6 +58,10 @@ class ProductController extends Controller
             'country_id'=> 'required|exists:countries,id'
         ]);
 
+        if($request->hasFile('image')){
+            $validated['image']= $request->file('image')->store('products', 'public');
+        }
+
         $product->update($validated);
 
         return redirect()->route('products.index')->with('success', 'Продукт успешно обновлен!');
