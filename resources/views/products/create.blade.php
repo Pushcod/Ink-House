@@ -5,7 +5,7 @@
     <div class="">
         <h1>Создать новый продукт</h1>
 
-        <form action="{{ route('products.store') }}" method="POST">
+        <form action="{{ route('products.store', $product->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
 
             <div class="">
@@ -25,7 +25,7 @@
 
             <div class="">
                 <label for="image"></label>
-                <input type="file" name="image">
+                <input type="file" name="image" accept="image/*">
             </div>
             
             <div class="form-group">

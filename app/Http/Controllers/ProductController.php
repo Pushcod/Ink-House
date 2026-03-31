@@ -26,10 +26,14 @@ class ProductController extends Controller
             'name'=>'required|string|max:255',
             'description'=>'required|string|max:255',
             'price'=>'required|numeric',
-            'image'=>'nullable|image|max:2048',
+            'image'=>['nullable','image','mimes:jpeg, png, jpg, gif','max:2048'],
             'author_id'=> 'required|exists:authors,id',
             'country_id'=> 'required|exists:countries,id'
         ]);
+
+        if($request->hasFile('image')){
+            $validated['image']=$request->file('image')->store('products', 'public');
+        }
 
         Product::create($validated);
 
@@ -37,19 +41,6 @@ class ProductController extends Controller
         ->with('success', 'Продукт успешно создан');
     }
 
-    public function show(Product $product)
-    {
-        $product->load(['author', 'country']);
-        
-        $relatedProducts = Product::where('author_id', $product->author_id)
-                                  ->where('id', '!=', $product->id)
-                                  ->where('country_id', $product->country_id)
-                                  ->limit(5)
-                                  ->get();
-        
-        
-        return view('products.show', compact('product', 'relatedProducts'));
-    }
 
     public function edit(Product $product){
         $authors = Author::orderBy('name')->get();
@@ -62,9 +53,9 @@ class ProductController extends Controller
             'name'=>'required|string|max:255',
             'description'=>'required|string|max:255',
             'price'=>'required|numeric',
-            'image'=>'nullable|image|max:2048',
-            'author_id'=>'required|exists:authors,id',
-            'country_id'=>'required|exists:countries,id'
+            'image'=>['nullable','image','mimes:jpeg, png, jpg, gif','max:2048'],
+            'author_id'=> 'required|exists:authors,id',
+            'country_id'=> 'required|exists:countries,id'
         ]);
 
         $product->update($validated);

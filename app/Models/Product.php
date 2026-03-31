@@ -22,4 +22,9 @@ class Product extends Model
     public function country(){
         return $this->belongsTo(Country::class);
     }
+
+    public function getImageUrlAttribute(): ?string
+    {
+        return $this->image ? asset('storage/'. $this->image) : null;
+    }
 }
