@@ -13,12 +13,13 @@
                 @endif
                 <p>{{ $product->author->name ?? 'Не указан' }}</p>
                 <p>{{ $product->country->name ?? 'Не указан' }}</p>
-                <form action="{{ route('products.destroy', $product) }}">
+                <form action="{{ route('products.destroy', $product->id) }}" method="POST">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="" onclick="return confrim('Вы уверены?')">Удалить</button>
+                    <button type="submit" class="" >Удалить</button>
                 </form>
                 <a href="{{ route('products.edit', $product->id) }}">Редактировать пост</a>
+                <a href="{{ route('products.show', $product->id) }}">Просмотреть пост</a>
             @endforeach
             <a href="{{ route('products.create') }}">Создать новый пост</a>
         </div>

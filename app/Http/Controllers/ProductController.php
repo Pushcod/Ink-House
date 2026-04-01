@@ -41,6 +41,10 @@ class ProductController extends Controller
         ->with('success', 'Продукт успешно создан');
     }
 
+    public function show(Product $product){
+        return view('products.show', compact('product'));
+    }
+
 
     public function edit(Product $product){
         $authors = Author::orderBy('name')->get();
